@@ -1,0 +1,2 @@
+#include <bits/stdc++.h>
+using namespace std; ifstream fin("preordine1.in"); ofstream fout("preordine1.out"); struct nod { int info; nod *st, *dr; }; void RSD(nod *p) { if(p) { fout << p -> info << " "; RSD(p->st); RSD(p->dr); } } void read(nod * &p) { int x; fin >> x; if(x == 0) p = NULL; else { p = new nod; p->info = x; read(p -> st); read(p -> dr); } } int main() { nod *p = NULL; read(p); RSD(p -> st); return 0; }

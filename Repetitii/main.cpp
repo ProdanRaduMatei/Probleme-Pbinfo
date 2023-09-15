@@ -1,0 +1,2 @@
+#include <bits/stdc++.h>
+using namespace std; bool cifra(char ch) { return ch >= '0' && ch <= '9'; } int main() { char s[300] , cuv[300]; cin >> s; int i = 0 , j = -1; while(s[i]!='\0') { if(s[i]=='(') j=0; else if(s[i]==')') { i++; int n=0; while(cifra(s[i])) n=n*10+((int)s[i]-48) , i++; i--; for(int q = 0 ; q < n ; ++q) for(int k = 0 ; k < j ; ++k) cout << cuv[k]; j=-1; } else if(j!=-1) cuv[j]=s[i] , j++; else cout << s[i]; i++; } return 0; }

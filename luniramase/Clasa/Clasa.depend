@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1574695944 source:h:\probleme info vacanta pbinfo\luniramase\clasa\main.cpp
+	<iostream>
+	<string.h>
+	<iomanip>
+

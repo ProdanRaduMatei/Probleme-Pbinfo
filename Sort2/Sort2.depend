@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1556526934 source:g:\probleme info vacanta pbinfo\sort2\main.cpp
+	<iostream>
+	<fstream>
+	<algorithm>
+

@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1583047960 source:h:\probleme info vacanta pbinfo\writedigits\main.cpp
+	<iostream>
+	<string.h>
+

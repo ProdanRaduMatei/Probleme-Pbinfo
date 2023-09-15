@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1578296240 source:h:\probleme info vacanta pbinfo\gradina piticului\main.cpp
+	<iostream>
+	<fstream>
+

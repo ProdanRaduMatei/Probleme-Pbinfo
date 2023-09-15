@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1590339746 source:h:\probleme info vacanta pbinfo\saritura_calului\main.cpp
+	<algorithm>
+	<iostream>
+	<fstream>
+	<string>
+	<vector>
+	<set>
+	<map>
+

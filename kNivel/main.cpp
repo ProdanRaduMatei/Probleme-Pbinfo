@@ -1,0 +1,2 @@
+#include <bits/stdc++.h>
+using namespace std; ifstream fin("knivel.in"); ofstream fout("knivel.out"); vector<int> G[101]; int n , p , x , y , k , T[102] , P[101] , q , d[101] , maxi; void dfs(int x) { P[x] = 1; for(auto i:G[x]) if(!P[i]) { d[i] = d[x] + 1; dfs(i); } } int main() { fin >> n >> k; for(int i = 1 ; i <= n ; i++) { fin >> T[i]; if(T[i] != 0) { G[T[i]].push_back(i); G[i].push_back(T[i]); } if(T[i] == 0) p = i; } dfs(p); for(int i = 1 ; i <= n ; i++) if(d[i] + 1 == k) fout << i << " "; }

@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1593618422 source:h:\probleme info vacanta pbinfo\ec2\main.cpp
+	<iostream>
+	<cmath>
+	<iomanip>
+

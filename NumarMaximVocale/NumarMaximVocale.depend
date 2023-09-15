@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1564729766 source:h:\probleme info vacanta pbinfo\numarmaximvocale\main.cpp
+	<iostream>
+	<fstream>
+	<cstring>
+

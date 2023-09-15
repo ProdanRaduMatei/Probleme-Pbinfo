@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1590126132 source:h:\probleme info vacanta pbinfo\partitiimultime\main.cpp
+	<iostream>
+	<fstream>
+

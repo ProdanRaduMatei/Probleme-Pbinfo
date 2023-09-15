@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1578414720 source:h:\probleme info vacanta pbinfo\sir11\main.cpp
+	<iostream>
+	<fstream>
+

@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1564400398 source:h:\probleme info vacanta pbinfo\prosir\main.cpp
+	<iostream>
+	<cstring>
+	<fstream>
+

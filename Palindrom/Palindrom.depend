@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1564725724 source:h:\probleme info vacanta pbinfo\palindrom\main.cpp
+	<iostream>
+	<fstream>
+	<cstring>
+

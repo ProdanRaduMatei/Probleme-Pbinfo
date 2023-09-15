@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1581240320 source:h:\probleme info vacanta pbinfo\matrice_div_et_imp\main.cpp
+	<iostream>
+	<fstream>
+

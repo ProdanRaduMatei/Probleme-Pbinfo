@@ -1,0 +1,2 @@
+#include <bits/stdc++.h>
+using namespace std; ifstream fin("miere.in"); ofstream fout("miere.out"); long long s[50002] , x; int n , m; int cauta_bin(long long s[] , int n , long long x , int z) { int st = 1 , dr = n; while(st <= dr) { int mij = (st + dr) / 2; if(s[mij] + 1ll * mij * (z - 1) > x) dr = mij - 1; else st = mij + 1; } return dr; } int main() { fin >> n; for(int i = 1 ; i <= n ; i++) { fin >> s[i]; s[i] += s[i - 1]; } fin >> m; for(int i = 1 ; i <= m ; i++) { fin >> x; fout << cauta_bin(s , n , x , i) << '\n'; } }

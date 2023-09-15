@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1552066104 source:e:\probleme info vacanta pbinfo\interclasare\main.cpp
+	<iostream>
+	<fstream>
+	<algorithm>
+

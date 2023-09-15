@@ -1,0 +1,2 @@
+#include <bits/stdc++.h>
+using namespace std; ifstream fin("frunze.in"); ofstream fout("frunze.out"); vector<int> G[101]; int n , x , k , rez[101] , p , cnt; int main() { fin >> n; for(int i = 1 ; i <= n ; i++) { fin >> x; if(x != 0) G[x].push_back(i); if(x == 0) p = i; } fout << p << '\n'; for(int i = 1 ; i <= n ; i++) { int ok = 0; for(auto j:G[i]) ok++; if(ok == 0) cnt++ , rez[cnt] = i; } fout << cnt << '\n'; for(int i = 1 ; i <= cnt ; i++) fout << rez[i] << " "; }
