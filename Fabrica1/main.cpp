@@ -2,18 +2,25 @@
 
 using namespace std;
 
-int n, i, t, t1, pachete;
+int minim = 1000001, val, mij, dr, st, k, n, a[1001];
 
-int main()
-{
-    cin >> t;
-    t=t*60;
-    cin >> n;
-    for (i=1; i<=n; ++i)
-    {
-        cin >> t1;
-        pachete=pachete+t/t1;
+int main() {
+    cin >> n >> k;
+    for (int x = 1 ; x <= n ; x++)
+        cin >> a[x];
+    st = 1, dr = 1000000;
+    while (st <= dr) {
+        mij = (st + dr) / 2;
+        val = 0;
+        for (int x = 1 ; x <= n ; x++)
+            val += mij / a[x];
+        if (val >= k) {
+            if (mij < minim)
+                minim = mij;
+            dr = mij - 1;
+        }
+        else
+            st = mij + 1;
     }
-    cout << pachete;
-    return 0;
+    cout << minim;
 }
