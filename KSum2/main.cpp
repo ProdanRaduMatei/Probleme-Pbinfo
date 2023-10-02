@@ -1,13 +1,13 @@
-#include <iostream>
-#include <climits>
+#include <fstream>
 #include <deque>
-#define ll long long
 
 using namespace std;
 
-const int NMAX = 1e6;
-int n, st, dr, x;
-long long sp[NMAX + 1], max_sum;
+ifstream cin("ksum2.in");
+ofstream cout("ksum2.out");
+
+const int NMAX = 1e5;
+int sp[NMAX + 1], x , n, maxi = -int(1e9), st, dr;
 deque <int> dq;
 
 void read() {
@@ -19,22 +19,18 @@ void read() {
 }
 
 void solve() {
-    max_sum = LLONG_MIN;
     for (int i = st; i <= n; i++) {
         while (!dq.empty() && sp[i] - sp[i - st] >= sp[i] - sp[dq.back()])
             dq.pop_back();
         dq.push_back(i - st);
-        while (!dq.empty() && dq.front() < i - dr)
+        if (!dq.empty() && dq.front() < i - dr)
             dq.pop_front();
-        max_sum = max(max_sum, sp[i] - sp[dq.front()]);
+        maxi = max(maxi, sp[i] - sp[dq.front()]);
     }
-    cout << max_sum;
-}
+    cout << maxi;
+}   
 
-int main() {
-    ios :: sync_with_stdio(false);
-    cin.tie(0);
-    cout.tie(0);
+int main(){    
     read();
     solve();
 }
