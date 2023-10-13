@@ -1,27 +1,27 @@
-#include <iostream>
-#include <fstream>
+#include <bits/stdc++.h>
+
 using namespace std;
+
 ifstream fin("eratostene.in");
 ofstream fout("eratostene.out");
-int prim(int x){
-    if (x < 2)
-        return 0;
-    if (x == 2)
-        return 1;
-    if (x % 2 == 0)
-        return 0;
-    for (int i = 3; i * i <= x; i = i + 2)
-        if (x % i == 0)
-            return 0;
-    return 1;
-}
+
+bool c[1000005];
+
 int main() {
-    int n, c = 0, x;
+    c[0] = c[1] = 1;
+    for (int i = 2; i <= 1000; ++i)
+        if (c[i] == 0)
+            for (int j = 2; i * j <= 1000000; ++j)
+                c[i * j] = 1;
+    int n;
     fin >> n;
+    int x;
+    int cnt = 0;
     for (int i = 1; i <= n; ++i) {
         fin >> x;
-        if (prim(x) == 1)
-            ++c;
+        if (c[x] == 0)
+            cnt++;
     }
-    fout << c;
+    fout << cnt;
+    return 0;
 }
