@@ -1,34 +1,32 @@
-#include <iostream>
 #include <fstream>
+#include <iostream>
 
 using namespace std;
 
 ifstream fin("nrdiv9.in");
 ofstream fout("nrdiv9.out");
 
-int prim(int x) {
-    int c = 0;
-    if (x < 2)
-        return 0;
-    for (int i = 1; i * i <= x; ++i) {
-        if (x % i == 0)
-            if (i * i == x)
-                ++c;
-            else
-                c = c + 2;
-    }
-    if (c == 9)
-        return 1;
-    return 0;
-}
+unsigned int n, ans = 0;
+int prim[25202] = {0};
 
 int main()
 {
-    int x, c = 0;
-    fin >> x;
-    for (int i = 1; i * i <= x; ++i)
-        if (prim(i * i) == 1)
-            ++c;
-    fout << c;
-    return 0;
+    fin>>n;
+    for (int i = 2; i <= 25201; i++)
+        for (int j = 2 * i; j <= 25201; j+=i)
+            prim[j] = 1;
+    for (unsigned long long i = 2; i <= 25201; i++)
+        if (prim[i] == 0)
+            for (unsigned long long j = i + 1; j <= 25201; j++)
+                if (prim[j] == 0)
+                    if (i * i * j * j <= n && i * i * j * j > 0)
+                        ans++;
+    for (unsigned long long i = 2; i <= 15; i++)
+        if (prim[i] == 0)
+        {
+            long long x = i * i * i * i * i * i * i * i;
+            if (x <= n && x > 0)
+                ans++;
+        }
+    fout<<ans;
 }
