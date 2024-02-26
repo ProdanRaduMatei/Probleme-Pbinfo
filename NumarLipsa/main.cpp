@@ -1,26 +1,30 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <algorithm>
 
 using namespace std;
 
 int main()
 {
-    int a[10001], n, maxx = 0, f[10001] = {0}, cnt = 0;
+    int n, a[10001], max = 0, f[10001] = {0}, cnt = 0;
     cin >> n;
-    for (int i = 1; i <= n; ++i) {
+    for (int i = 0; i < n; ++i)
+    {
         cin >> a[i];
-        if (a[i] > maxx)
-            maxx = a[i];
-        ++f[a[i]];
+        if (a[i] > max)
+            max = a[i];
+        f[a[i]]++;
     }
-    sort(a + 1, a + 1 + n);
-    for (int i = 1; i <= maxx; ++i) {
+    sort(a, a + n);
+    for (int i = 1; i <= max; ++i)
+    {
         ++cnt;
-        if (f[i] == 0) {
+        if (f[i] == 0)
+        {
             cout << i;
             break;
         }
     }
-    if (cnt == maxx)
+    if (cnt == max)
         cout << a[n - 1] + 1;
     return 0;
 }
