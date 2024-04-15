@@ -1,49 +1,56 @@
 #include <iostream>
 #include <cstring>
-#include <algorithm>
 
 using namespace std;
 
-int st[20], n, i, j;
-char s[20], aux, v[10] = "aeiou";
+char s[11], x[11];
+int p[11];
 
-void afisare (int k) {
-    for (int i = 1; i <= k; ++i)
-        cout << s[st[i]];
-    cout << endl;
+bool eVoc(char c)
+{
+    return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
 }
 
-int valid (int k) {
-    int ev = 1;
-    for (int i = 1; i <= k - 1; ++i)
-        if (st[k] == st[i])
-            ev = 0;
-    if (k == 1 || k == n)
-        if (strchr(v, s[st[k]]) == 0)
-            ev = 0;
-    return ev;
-}
-
-void back (int k) {
-    for (int i = 0; i <= n - 1; ++i)
+void afisare(int n)
+{
+    if (eVoc(x[n]))
     {
-        st[k] = i;
-        if (valid(k))
-            if (k == n)
-                afisare(k);
-            else
-                back(k + 1);
+        for (int i = 1; i <= n; ++i)
+            cout << x[i];
+        cout << '\n';
+    }
+}
+
+void backtracking(int k, int n)
+{
+    for (int i = 0; i < n; ++i)
+    {
+        if (!p[i])
+        {
+            x[k] = s[i];
+            p[i] = 1;
+            if (eVoc(x[1]))
+                if (k == n)
+                    afisare(n);
+                else
+                    backtracking(k + 1, n);
+            p[i] = 0;
+        }
     }
 }
 
 int main()
 {
     cin >> s;
-    n = strlen(s);
-    for (int i = 0; i <= n - 2; ++i)
-        for (int j = i + 1; j <= n - 1; ++j)
+    int n = strlen(s);
+    for (int i = 0; i < n; ++i)
+        for (int j = i + 1; j < n; ++j)
             if (s[i] > s[j])
-                swap(s[i], s[j]);
-    back(1);
+            {
+                char aux = s[i];
+                s[i] = s[j];
+                s[j] = aux;
+            }
+    backtracking(1, n);
     return 0;
 }
