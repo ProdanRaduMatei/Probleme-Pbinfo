@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1606050920 source:h:\probleme info vacanta pbinfo\pentagon\main.cpp
+	<iostream>
+	<fstream>
+

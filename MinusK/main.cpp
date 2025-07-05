@@ -1,0 +1,2 @@
+#include <bits/stdc++.h>
+using namespace std; ifstream fin("minusk.in"); ofstream fout("minusk.out"); int n , k , m[1000001] , p[1000001]; int main() { fin >> n >> k; p[0] = p[1] = m[1] = 1; for(int i = 2 ; i <= n ; i++) { p[i] = m[i] = (m[i - 1] + p[i - 1]) % 2011; if(i >= k) { if(m[i] > p[i - k]) m[i] = (m[i] - p[i - k]) % 2011; else m[i] = (m[i] + 2011 - p[i - k]) % 2011; } } fout << (m[n] + p[n]) % 2011; return 0; }

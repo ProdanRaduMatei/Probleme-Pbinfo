@@ -1,0 +1,2 @@
+#include <bits/stdc++.h>
+using namespace std; ifstream fin("countsub.in"); ofstream fout("countsub.out"); int n , St[1001] , Dr[1001] , val[1001] , T[1001] , k , x , cnt; void RSD(int p) { if(p > 0) { cnt++; RSD(St[p]); RSD(Dr[p]); } } int main() { fin >> n; for(int i = 1 ; i <= n ; i++) { fin >> val[i] >> St[i] >> Dr[i]; T[St[i]] = i; T[Dr[i]] = i; } fin >> k; for(int i = 1 ; i <= k ; i++) { fin >> x; cnt = 0; RSD(x); fout << cnt << '\n'; } }

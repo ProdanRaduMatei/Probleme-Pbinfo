@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1589873900 source:h:\probleme info vacanta pbinfo\hercule\main.cpp
+	<iostream>
+	<fstream>
+

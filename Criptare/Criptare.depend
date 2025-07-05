@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1584773026 source:h:\probleme info vacanta pbinfo\criptare\main.cpp
+	<iostream>
+	<fstream>
+

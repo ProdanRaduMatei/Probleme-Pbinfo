@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1590421348 source:h:\probleme info vacanta pbinfo\eureni\main.cpp
+	<iostream>
+	<fstream>
+

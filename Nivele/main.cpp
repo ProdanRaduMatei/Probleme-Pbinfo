@@ -1,0 +1,2 @@
+#include <bits/stdc++.h>
+using namespace std; ifstream fin("nivele.in"); ofstream fout("nivele.out"); vector<int> G[101]; int n , p , x , y , k , T[102] , P[101] , niv[101]; void dfs(int x , int n) { P[x] = 1; niv[x] = n; for(auto i:G[x]) if(!P[i]) dfs(i , n + 1); } int main() { fin >> n; for(int i = 1 ; i <= n ; i++) { fin >> T[i]; G[T[i]].push_back(i); G[i].push_back(T[i]); if(T[i] == 0) p = i; } dfs(p , 1); fin >> k; for(int i = 1 ; i <= k ; i++) { fin >> x; fout << niv[x] << '\n'; } }
