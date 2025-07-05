@@ -1,2 +1,0 @@
-#include <bits/stdc++.h>
-using namespace std; ifstream fin("repetare.in"); ofstream fout("repetare.out"); int main() { int n , m , a[1000] , b[1000] , ok = 0; fin >> n; for(int i = 0 ; i < n ; ++i) fin >> a[i]; fin >> m; for(int i = 0 ; i < m ; ++i) fin >> b[i]; for(int i = 0 ; i < m ; ++i) { int cnt = 0; for(int j = 0 ; j < n ; ++j) if(b[i]!=a[j]) cnt++; if(cnt == n) ok = 1; } if(ok == 0) { int k = 0 , i = 0 , cnt = 0; while(m > 1) { if(b[i]==a[k]) i++ , m--; k++; if(k==n) cnt++ , k = 0; } fout << cnt+1; } else fout << "IMPOSIBIL"; return 0; }

@@ -1,2 +1,0 @@
-#include <bits/stdc++.h>
-using namespace std; ifstream fin("nrnod.in"); ofstream fout("nrnod.out"); int n, c; bool ok = false; void citire(int nod, int val){ int x; fin >> x; if(nod % 2 == 0){ if(x == 0) ok = true; else ok = false; } else{ if((x != 0 && ok) || (x==0 && !ok)){ ok = false; c++; } else{ ok = false; } } if(x){ citire(nod * 2, x); citire(nod * 2 + 1, x); } } int main(){ citire(1, 0); fout << c; return 0; }

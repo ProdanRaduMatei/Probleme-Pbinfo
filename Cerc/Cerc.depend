@@ -1,6 +1,0 @@
-# depslib dependency file v1.0
-1589701364 source:h:\probleme info vacanta pbinfo\cerc\main.cpp
-	<iostream>
-	<fstream>
-	<algorithm>
-

@@ -1,2 +1,0 @@
-#include <bits/stdc++.h>
-using namespace std; ifstream fin("subarbore.in"); ofstream fout("subarbore.out"); vector<int> G[101]; int n , p , x , y , k , T[102] , P[101] , rez[101] , cnt; void dfs(int x) { P[x] = 1; rez[++cnt] = x; for(auto i:G[x]) if(!P[i]) dfs(i); } int main() { fin >> n >> p; for(int i = 1 ; i <= n ; i++) { fin >> T[i]; if(T[i] != 0) G[T[i]].push_back(i); } dfs(p); sort(rez + 1 , rez + cnt + 1); for(int i = 1 ; i <= cnt ; i++) fout << rez[i] << " "; }

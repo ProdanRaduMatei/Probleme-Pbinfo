@@ -1,2 +1,0 @@
-#include <bits/stdc++.h>
-using namespace std; ifstream fin("subarbore2.in"); ofstream fout("subarbore2.out"); int n , k , t[101] , val[101] , s; int main() { fin >> n >> k; for(int i = 1 ; i <= n ; i++) fin >> t[i]; for(int i = 1 ; i <= n ; i++) fin >> val[i]; s += val[k]; for(int i = 1 ; i <= n ; i++) { int ok = 0; int p = t[i]; while(p) { if(p == k)ok = 1; p = t[p]; } if(ok) s += val[i]; } fout << s; return 0; }

@@ -1,6 +1,0 @@
-# depslib dependency file v1.0
-1589697150 source:h:\probleme info vacanta pbinfo\shuffle\main.cpp
-	<iostream>
-	<fstream>
-	<algorithm>
-
