@@ -4,8 +4,8 @@
 
 using namespace std;
 
-ifstream fin("loterie.in");
-ofstream fout("loterie.out");
+ifstream fin("bac.in");
+ofstream fout("bac.out");
 
 int v, n;
 int min1 = INT_MAX, maxim = INT_MIN, min2 = INT_MAX;
