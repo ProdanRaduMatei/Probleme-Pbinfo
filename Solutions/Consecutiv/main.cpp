@@ -3,23 +3,24 @@
 
 using namespace std;
 
-int consecutiv(int n, int x)
+void consecutiv(int n, int &x)
 {
-    int x = sqrt(n);
-    if ((x - 1) * x <= n && n <= x * (root + 1))
+    x = sqrt(n);
+    if ((x - 1) * x <= n && n <= x * (x + 1))
     {
-        return root;
+        return;
     }
     else
     {
-        return root + 1;
+        ++x;
     }
 }
 
 int main()
 {
-    int n;
+    int n, x;
     cin >> n;
-    cout << consecutiv(n);
+    consecutiv(n, x);
+    cout << x << endl;
     return 0;
 }
